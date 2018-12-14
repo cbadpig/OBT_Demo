@@ -1,0 +1,149 @@
+body {
+    font-family: "宋体";
+    background-color: #DDEBF6;
+    font-size: 20px;
+}
+.paperTitle{ background:url(../images/titlebg.gif) repeat-x; width:100%; height:29px;}
+.paperTitle li{ float:left; display:block;font-family:"宋体"}
+.paperTitle li a{ display:block; width:58px; height:21px; background:url(../images/pic_40.jpg) no-repeat; float:left; margin:4px 2px auto 0px; color:#000000; font-size:12px; line-height:21px; text-align:center; text-decoration:none;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53";}
+.paperTitle li a:hover{ text-decoration:none}
+.paperTitle .single{float:left; height:29px; margin-right:6px; width:109px; font-size:14px; font-weight:bolder; line-height:29px; background:url(../images/markst.png) no-repeat; text-align:center;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53";}
+/*test_bt 大题描述*/
+.itemGroupTitle{ font-weight: normal; color:#333333; font-size:20px; line-height:100%; padding:5px; margin:-1px ;margin-left:0px;text-align:left}
+/* 小题名称*/
+.itemName{ margin:1px 2px 1px 2px;font-family:SimHei; FONT-SIZE: 14pt;}
+
+.subItemName{line-height:1.5;margin-right:20px;}
+.itemNum {
+    margin: 13px 0 0 11px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    font-style: italic;
+    color: #FFF;
+    font-weight: bold;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+#itembox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 0px solid #000;
+    margin: 10px auto;
+    overflow: hidden;
+}
+#boxline {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    height: 100%;
+    width: 6px;
+    overflow: hidden;
+    background: #a1b5fa;
+    cursor: w-resize;
+}
+#leftbox {
+    width: 40%;
+    height: 500px;
+    overflow: auto;
+    float: left
+}
+#rightbox {
+    width: 59%;
+    height: 500px;
+    overflow: auto;
+    float: right
+}
+
+.question p {
+    text-indent: 2em;
+}
+.i-question table {
+    margin-left: 2em;
+    margin-top: 10px;
+}
+.i-question p {
+    text-indent: 2em;
+}
+/* test_content */
+.itemArea {
+    line-height: 1.5;
+	border-top: 1px solid #9fb7f7;
+	padding: 15px 15px 15px 15px;
+	padding-top:0;
+}
+.itemArea p:first-child {
+	margin-top:10px;
+	margin-bottom:0px;
+}
+.itemContext {
+  margin:3px 0 0 20px;
+}
+.itemChoice {
+    color: #F00;
+    font-weight: bold;
+    vertical-align: top;
+}
+.choiceContext {
+    margin-top: 1px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    margin-right: 2px;
+}
+.choiceList {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 5px 14px;
+}
+.choiceTitle {
+  font-weight:bold;
+}
+.clear {
+    clear: both;
+}
+label.labelClss p 
+{
+	padding:0px; margin:0px;display: inline;
+}
+
+.partingTitle{ width:100%; height:29px;}
+.partingTitle li{ float:left; display:block;font-family:"宋体"}
+.partingTitle li a{ display:block; width:58px; height:21px; background:url(../images/pic_40.jpg) no-repeat; float:left; margin:4px 2px auto 0px; color:#000000; font-size:12px; line-height:21px; text-align:center; text-decoration:none;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53";}
+.partingTitle li a:hover{ text-decoration:none}
+.partingTitle .spanBold1{font-weight: bold;font-size:14px;}
+.partingTitle .rightFloat{float: right;}
+.partingTitle .bewrite{cursor: pointer; float:left; height:29px; margin-right:6px; width:60px; font-size:12px; font-weight:bolder; line-height:29px; background-color: #F5F5F5; no-repeat; text-align:center;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53";}
+.partingTitle .onwrite{cursor: pointer; float:left; height:29px; margin-right:6px; width:60px; font-size:12px; font-weight:bolder; line-height:29px; background-color: #FFBB00; no-repeat; text-align:center;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53";}
+.itemGroupTitle .spanBold{font-size: 18px; font-weight: bold;}
+.itemGroupTitle .spanBold2{font-size: 18px; font-weight: bold;margin:1px 2px 1px 2px;}
+.itemGroupTitle span{font-size: 18px;}
+
+.windowOverflow {/*overflow-y:auto; overflow-x:auto; */width:100%;}
+.windowOverflow .itemArea2{overflow-y:auto; overflow-x:auto; width:100%;height:235px; display:true; padding-top: 3px; background-color: #FFFFFF;}
+.windowOverflow .itemArea{display:true; /*padding-top: 3px;*/margin:3px auto auto auto;}
+.windowOverflow .itemAreaNo{display:none;}
+
+#window01 .spanRed {color: red; font-size: 18px; font-weight: bold;}
+#window03 p{font-size: 15.5px; line-height:0.3;}
+.spanBold {font-weight: bold;}
+
+.textAreaWh {width: 99%; height: 50px;outline:none;resize:none;font-size: 16px;}
+.tlbar {width: 100%; height: 10px; background-color: red;}
+
+
+.active2 {
+	background-color: #FFBB00 !important;
+}
+
+#line {
+	height:6px;background: #a1b5fa;cursor: n-resize;
+}
+.itemArea>p{
+	padding: 5px 0;
+}
+.itemArea2>p{
+	padding: 10px 5px;
+}

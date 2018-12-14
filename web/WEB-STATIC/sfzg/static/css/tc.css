@@ -1,0 +1,46 @@
+﻿#ym-window{font-size:12px;font-family:'宋体';visibility:hidden;}.ym-ttc{height:0px; border:none; }
+.tc_tl{position:relative;padding-left:20px;background:url(../images/tc/win_side_l.png) left top no-repeat;z-index:10005;}
+.tc_tr{padding-right:20px;background:url(../images/tc/win_side_r.png) right top no-repeat;z-index:10005}
+.tc_tc{background:url(../images/tc/win_tb_bg.png) repeat-x 0 -25px;height:24px;line-height:24px; position:relative;z-index:10005; }
+.tc_header_text{ position:absolute; z-index:10010; left:0px; top:10px;font-size:12px;font-weight:bold;color:#e2f0bc; background:url(../images/tc/tc_title.png) left top no-repeat; padding-left:24px; height:28px;_background-image:url(../images/tc/tc_title.gif);}
+.tc_header_text_r{ height:28px; margin:0; padding-left:0px; padding-right:24px; background:url(../images/tc/tc_title.png) right bottom; line-height:28px;word-wrap:normal;word-break:keep-all; float:left; _background-image:url(../images/tc/tc_title.gif);}
+/*body*/
+.ym-ml{padding-left:0px;}
+.ym-mr{padding-right:0px;}
+.ym-mc{padding:0}
+/*tbody*/
+.tc_ml{background:url(../images/tc/win_l.png) repeat-y left 0;padding-left:14px;}
+.tc_mr{background:url(../images/tc/win_r.png) repeat-y right 0;padding-right:14px;}
+.tc_mc{position:relative; z-index:10004; background:#e5e2dd;}
+.tc_mc_shuye{ height:31px; width:31px; position:absolute; top:16px; right:-9px; z-index:10008; background:url(../images/tc/win_rt.png) no-repeat -6px -5px;}
+.tc_body{}
+/*button*/
+.ym-btn{text-align:center;}
+/*mybutton*/
+.ym-bl{padding-left:0px}.ym-br{padding-right:0px}.ym-bc{height:0px;font-size:0px}
+/*my_footer*/
+.tc_bl{background:url(../images/tc/win_side_l.png) no-repeat 0 bottom;padding-left:20px}
+.tc_br{background:url(../images/tc/win_side_r.png) no-repeat right bottom;padding-right:20px}
+.tc_bc{background:url(../images/tc/win_tb_bg.png) repeat-x left -6px;height:18px;font-size:0px; }
+/*icon*/
+.tc_close{position:absolute; right:-25px;top:-3px;z-index:11000;cursor:pointer;background:url(../images/tc/close.png) no-repeat 0px 0px;width:31px;height:31px;display:block; color:#e2f0bc; z-index:10100; _background-image:url(../images/tc/close.gif)}
+.tc_close2{position:absolute; right:-3px;top:-3px;z-index:11000;cursor:pointer;background:url(../images/close2.png) no-repeat 0px 0px;width:31px;height:31px;display:block; color:#e2f0bc; z-index:10100; _background-image:url(../images/close2.gif)}
+/*取消确认按钮样式*/
+input.btnStyle{background:url(../images/tc/btn_bg.gif) no-repeat;width:90px;height:30px;line-height:30px;font-size:12px;color:#fff;border:0;margin:10px 0;font-weight:bold;}
+#tcDivEle{ line-height:0px;  font-size:0px;overflow:hidden; position:absolute; z-index:10003; background:url(../images/dialog_bg.jpg) repeat; /*background:#008000;*/}
+/*弹窗 2 css*/
+.kwin{ width:382px; height:203px; background:url(../images/tc/kwin_alert_bg.png) no-repeat; padding:16px 16px 8px 8px; font-size:12px}
+.kwinIn{ width:382px; height:203px;background:url(../images/tc/kwin_alert_bg.jpg) -5px -12px no-repeat;}
+.kwinTitle{ padding:35px 0 15px 110px; line-height:45px; color:#62472d; font-size:22px; font-weight:bold;}
+.kwinTitle div{ padding-left:45px;line-height:45px; background-position:left center; background-repeat:no-repeat;}
+.kwin_alert{ background-image:url(../images/tc/kwin_dl_alert.gif)}
+.kwin_confirm{ background-image:url(../images/tc/kwin_dl_confirm.gif)}
+.kwin_success{background-image: url(../images/tc/kwin_dl_success.gif)}
+.kwin_error{background-image: url(../images/tc/kwin_dl_error.gif)}
+.kwin_tips{ line-height:25px; text-align:center; color:#4b380f; font-size:13px;}
+.kwin_btns{ float:left; position:relative; left: 50%; text-align:center; padding-top:20px;}
+.kwinBtn{ float:left;background:url(../images/tc/btn_bg.gif) no-repeat; margin:0 5px; width:90px; height:30px; line-height:30px; position:relative; left:-50%; text-align:center; text-decoration:none; color:#FFF;}
+.kwinmask{}
+*+html .kwinBtn{ padding:0 35px;}
+.tc_close3{position:absolute; right:4px;top:6px;z-index:11000;cursor:pointer; background:url(../images/close2.png) no-repeat 0px 0px;width:31px;height:31px;display:block; color:#e2f0bc; z-index:10100; _background-image:url(../images/close2.gif); border:1px red solid;}
+.tc_drag{position:absolute; right:4px;top:6px;z-index:11000;cursor:move;background:url(../images/close2.png) no-repeat 0px 0px;width:31px;height:31px;display:block; color:#e2f0bc; z-index:10100; _background-image:url(../images/close2.gif)}

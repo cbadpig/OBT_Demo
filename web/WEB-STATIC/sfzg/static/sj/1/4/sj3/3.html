@@ -1,0 +1,205 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+		<link href="css/item.css?version=1.0.7401" rel="stylesheet" type="text/css">
+		<title>item 1</title>
+		<script type="text/javascript">
+		$(function() {
+		$("#textArea01").val(getItoanswer(1));
+	});
+	
+	function getItoanswer(itemCode) {
+			var ito;
+			var papers = OBT.paper.getPapers().data;
+			$.each(papers,function(k,v){
+				var items = v.items;
+				$.each(items,function(i,val){
+					if(val.code==itemCode) {
+						ito = val;
+						
+					}
+				});
+			});
+			
+			return ito.answer;
+	}
+		</script>
+	</head>
+
+	<body>
+		<!--统一标题区-->
+		<div class="paperTitle">
+			<li class="single">试卷</li>
+			<li>
+				<a target="_self" id="mark" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('yellow');">题干标识</a>
+				<a target="_self" id="unmark" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('#FFFFFF')">取消标识</a>
+			</li>
+		</div>
+			<!--窗口1
+		<div class="itemGroupTitle" id="window01"> 
+			<span class="spanBold">三、案例分析题（本题20分）</span>
+		</div>-->
+
+		<!--资料区-->
+		<div id="dataArea">
+			<div class=" partingTitle ">
+			<span class="spanBold" style="">三、案例分析题（本题20分）</span>
+				<li class="rightFloat">
+					<a target="_self" id="mark1" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('yellow');">题干标识</a>
+					<a target="_self" id="unmark1" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('#FFFFFF')">取消标识</a>
+					<a target="_self" id="zoomwindow0" href="javascript:void(0)" onclick="zoomwindows(this.id)">放大窗口</a>
+				</li>
+			</div>
+				<!--窗口2-->
+			<div class="windowOverflow" id="window02">
+				<div id="I-0" class="itemArea2" itemcode="1">
+						<p>顾某（中国籍）常年居住M国，以丰厚报酬诱使徐某（另案处理）两次回国携带毒品甲基苯丙胺进行贩卖。2014年3月15日15时，徐某在B市某郊区交易时被公安人员当场抓获。侦查中徐某供出了顾某。我方公安机关组成工作组按照与该国司法协助协定赴该国侦查取证，由M国警方抓获了顾某，对其进行了讯问取证和住处搜查，并将顾某及相关证据移交中方。</p>
+						<p>检察院以走私、贩卖毒品罪对顾某提起公诉。鉴于被告人顾某不认罪并声称受到刑讯逼供，要求排除非法证据，一审法院召开了庭前会议，通过听取控辩双方的意见及调查证据材料，审判人员认定非法取证不成立。开庭审理后，一审法院认定被告人两次分别贩卖一包甲基苯丙胺和另一包重7.6克甲基苯丙胺判处其有期徒刑6年6个月。顾某不服提出上诉，二审法院以事实不清发回重审。原审法院重审期间，检察院对一包甲基苯丙胺重量明确为2.3克并作出了补充起诉，据此原审法院以被告人两次分别贩卖2.3克、7.6克毒品改判顾某有期徒刑7年6个月。被告人不服判决再次上诉到二审法院。</p>
+						问题：</br>
+							&nbsp;&nbsp;1．M国警方移交的证据能否作为认定被告人有罪的证据？对控辩双方提供的境外证据，法院应当如何处理？</br>
+							&nbsp;&nbsp;2．本案一审法院庭前会议对非法证据的处理是否正确？为什么？</br>
+							&nbsp;&nbsp;3．发回原审法院重审后，检察院对一包甲基苯丙胺重量为2.3克的补充起诉是否正确？为什么？</br>
+							&nbsp;&nbsp;4．发回重审后，原审法院的改判加刑行为是否违背上诉不加刑原则？为什么？</br>
+							&nbsp;&nbsp;5．此案再次上诉后，二审法院在审理程序上应如何处理？</br>
+					
+				</div>
+			</div>
+		</div>
+		<!--拖拽线-->
+        <div id="line" ></div>
+		<!--答题区-->
+		<div id="answerArea">
+			<div class=" partingTitle ">
+				
+				<li class="bewrite active2" id="bewrite06" onclick="bewriteCk(this)">问题(1)</li>
+				<li class="bewrite" id="bewrite07" onclick="bewriteCk(this)">问题(2)</li>
+				<li class="bewrite" id="bewrite08" onclick="bewriteCk(this)">问题(3)</li>
+				<li class="bewrite" id="bewrite09" onclick="bewriteCk(this)">问题(4)</li>
+				<li class="bewrite" id="bewrite10" onclick="bewriteCk(this)">问题(5)</li>
+				<li class="rightFloat">
+					<a target="_self" id="copy1" href="javascript:void(0)" onclick="copystr()">复制</a>
+					<a target="_self" id="paste1" href="javascript:void(0)" onclick="parsestr()">粘贴</a>
+					<ul class="moveLi"><a target="_self" id="input1" href="javascript:void(0)" onclick="showEditorMenu2()">输入法</a></ul>
+					<a target="_self" id="zoomwindow1" href="javascript:void(0)" onclick="zoomwindows(this.id)">放大窗口</a>
+				</li>
+			</div>
+			<!--窗口3-->
+			<div class="windowOverflow" id="window03">
+				<div id="B-1" class="itemArea" itemcode="1">
+					<p>1．M国警方移交的证据能否作为认定被告人有罪的证据？对控辩双方提供的境外证据，法院应当如何处理？</p>
+					<p class="spanBold">请在下方答题区内答题。</p>
+					<textarea id="textArea06" class="textAreaWh" onkeyup="ITEM.textAreaKeyUp(this,10)" onblur = "ITEM.textAreaKeyUp(this,10)"></textarea>
+				</div>
+				<div id="B-2" class="itemAreaNo" itemcode="1">
+					<p>2．本案一审法院庭前会议对非法证据的处理是否正确？为什么？</p>
+					<p class="spanBold">请在下方答题区内答题。</p>
+					<textarea id="textArea07" class="textAreaWh" onkeyup="ITEM.textAreaKeyUp(this,11)" onblur="ITEM.textAreaKeyUp(this,11)"></textarea>
+				</div>
+				<div id="B-3" class="itemAreaNo" itemcode="1">
+					<p>3．发回原审法院重审后，检察院对一包甲基苯丙胺重量为2.3克的补充起诉是否正确？为什么？</p>
+					<p class="spanBold">请在下方答题区内答题。</p>
+					<textarea id="textArea08" class="textAreaWh" onkeyup="ITEM.textAreaKeyUp(this,12)" onblur="ITEM.textAreaKeyUp(this,12)"></textarea>
+				</div>
+				<div id="B-4" class="itemAreaNo" itemcode="1">
+					<p>4．发回重审后，原审法院的改判加刑行为是否违背上诉不加刑原则？为什么？</p>
+					<p class="spanBold">请在下方答题区内答题。</p>
+					<textarea id="textArea09" class="textAreaWh" onkeyup="ITEM.textAreaKeyUp(this,13)" onblur="ITEM.textAreaKeyUp(this,13)"></textarea>
+				</div>
+				<div id="B-5" class="itemAreaNo" itemcode="1">
+					<p>5．此案再次上诉后，二审法院在审理程序上应如何处理？</p>
+					<p class="spanBold">请在下方答题区内答题。</p>
+					<textarea id="textArea10" class="textAreaWh" onkeyup="ITEM.textAreaKeyUp(this,14)" onblur="ITEM.textAreaKeyUp(this,14)"></textarea>
+				</div>
+			</div>
+		</div>
+	</body>
+<script type="text/javascript">
+	
+	$(function() {
+		$("#textArea06").val(getItoanswer(10));
+	});
+	
+	function getItoanswer(itemCode) {
+			var ito;
+			var papers = OBT.paper.getPapers().data;
+			$.each(papers,function(k,v){
+				var items = v.items;
+				$.each(items,function(i,val){
+					if(val.code==itemCode) {
+						ito = val;
+						
+					}
+				});
+			});
+			
+			return ito.answer;
+	}
+	
+	
+		function bewriteCk(obj) {
+			var $this = $(obj);
+			$this.siblings().removeClass("active2");
+			$this.addClass("active2");
+			
+			var id = obj.id;
+			if (id == "bewrite06") {
+				document.getElementById("B-1").className = "itemArea";
+				document.getElementById("B-2").className = "itemAreaNo";
+				document.getElementById("B-3").className = "itemAreaNo";
+				document.getElementById("B-4").className = "itemAreaNo";
+				document.getElementById("B-5").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				//document.getElementsByClassName("onwrite")[0].className = "bewrite";
+				//document.getElementById(id).className = "onwrite";
+				$("#textArea06").val(getItoanswer(10));	
+			}
+			if (id == "bewrite07") {
+				document.getElementById("B-2").className = "itemArea";
+				document.getElementById("B-1").className = "itemAreaNo";
+				document.getElementById("B-3").className = "itemAreaNo";
+				document.getElementById("B-4").className = "itemAreaNo";
+				document.getElementById("B-5").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				$("#textArea07").val(getItoanswer(11));
+			}
+			if (id == "bewrite08") {
+				document.getElementById("B-3").className = "itemArea";
+				document.getElementById("B-1").className = "itemAreaNo";
+				document.getElementById("B-2").className = "itemAreaNo";
+				document.getElementById("B-4").className = "itemAreaNo";
+				document.getElementById("B-5").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				$("#textArea08").val(getItoanswer(12));
+			}
+			if (id == "bewrite09") {
+				document.getElementById("B-4").className = "itemArea";
+				document.getElementById("B-1").className = "itemAreaNo";
+				document.getElementById("B-2").className = "itemAreaNo";
+				document.getElementById("B-3").className = "itemAreaNo";
+				document.getElementById("B-5").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				$("#textArea09").val(getItoanswer(13));
+			}
+			if (id == "bewrite10") {
+				document.getElementById("B-5").className = "itemArea";
+				document.getElementById("B-1").className = "itemAreaNo";
+				document.getElementById("B-2").className = "itemAreaNo";
+				document.getElementById("B-3").className = "itemAreaNo";
+				document.getElementById("B-4").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				$("#textArea10").val(getItoanswer(14));
+			}
+		}
+	</script>
+</html>

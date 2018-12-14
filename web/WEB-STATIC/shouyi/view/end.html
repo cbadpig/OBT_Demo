@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全国执业兽医资格考试计算机考试模拟系统</title>
+<link type="image/x-icon" href="../common/images/favicon.ico?version=1.0.7401" rel="shortcut icon" />
+  <script language="javascript" src="../common/js/jquery.min.js?version=1.0.7401"></script>
+  <script language="javascript" src="js/end.js"></script>
+<style>
+body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	background-color:#ffffff;
+	background: url(images/1/background.jpg) repeat-x;
+}
+.endBack2 { 
+	position:absolute; 
+	top:50%; left:50%; 
+	width:1132px; height:602px; 
+	margin-left:-566px;
+	margin-top:-302px;
+	overflow:hidden;
+	background:url(images/1/back_info.jpg) no-repeat;
+}
+.txttitle{
+	position:absolute; 
+	top:100px; 
+	width:100%;
+	text-align:center;
+}
+.txttitle2{
+	position:absolute; 
+	top:260px; 
+	width:100%;
+	text-align:center;
+}
+.txttitle3{
+	position:absolute; 
+	top:400px; 
+	width:100%;
+	text-align:center;
+}
+.endtext { 
+	position:relative;
+	color:#07484e; 
+	font-size:32px; 
+	font-weight:normal; 
+}
+.endtext2 { 
+	position:relative;
+	color:#07484e; 
+	font-size:38px; 
+	font-weight:normal; 
+}
+.endtext3 { 
+	position:relative;
+	color:#ff0000; 
+	font-size:72px; 
+	font-weight:normal; 
+}
+.buthome{
+	position:absolute; 
+	top:540px; 
+	width:100%;
+	text-align:center;
+}
+.inphome {
+	width: 90px;
+	background: url(images/submit.gif) repeat-x;
+	border: 1px solid #cc6600;
+	color:#000000;
+	font-size:13px;
+	cursor: pointer;
+	border-radius:0px;
+	padding:6px;
+}
+
+</style>
+  <script language="javascript" src="../common/js/jquery.min.js?version=1.0.7401"></script>
+  <link rel="stylesheet" type="text/css" href="../common/artdialog/ui-dialog.css?version=1.0.7401" />
+  <script language="javascript" src="../common/artdialog/dialog-min.js?version=1.0.7401"></script>
+    <!-- OBT基础类库 -->
+  <script language="javascript" src="./js/obt.js"></script>
+  	<script>
+	 function getQueryString(name) {
+    
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    var kmtype = getQueryString("kmtype");
+		
+		
+		
+	</script>
+</head>
+<body>
+
+	<div class="endBack2">
+		<div class="txttitle">
+			<span class="endtext"></span>
+		</div>
+		
+		<div class="txttitle2">
+			<span class="endtext2">正在上传考试答案包，请稍候...</span>
+		</div>
+		
+		<div class="txttitle3">
+			<span class="endtext3">请不要关机</span>
+		</div>
+		
+		<!--<div class="buthome">
+			<input type="button" onclick="rethome()" class="inphome" value="关闭窗口"/>
+		</div>-->
+	</div>
+	
+</body>
+</html>

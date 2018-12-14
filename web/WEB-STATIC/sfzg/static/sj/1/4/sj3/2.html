@@ -1,0 +1,157 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+		<link href="css/item.css?version=1.0.7401" rel="stylesheet" type="text/css">
+		<title>item 3</title>
+
+	</head>
+
+	<body>
+		<!--统一标题区-->
+		<div class="paperTitle">
+			<li class="single">试卷</li>
+			<li>
+				<a target="_self" id="mark" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('yellow');">题干标识</a>
+				<a target="_self" id="unmark" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('#FFFFFF')">取消标识</a>
+			</li>
+		</div>
+		<!--窗口1
+		<div class="itemGroupTitle" id="window01">
+			<span class="spanBold" style="">二、法律文书题（本题20分）</span>
+		</div>
+		-->
+		<!--资料区-->
+		<div id="dataArea">
+			<div class="partingTitle">
+			<span class="spanBold" style="">二、法律文书题（本题20分）</span>
+				<li class="rightFloat">
+					<a target="_self" id="mark1" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('yellow');">题干标识</a>
+					<a target="_self" id="unmark1" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('#FFFFFF')">取消标识</a>
+					<a target="_self" id="zoomwindow0"  href="javascript:void(0)" onclick="zoomwindows(this.id)">放大窗口</a>
+				</li>
+			</div>
+			<!--窗口2-->
+			<div class="windowOverflow" id="window02">
+				<div id="I-0" class="itemArea2" itemcode="1">
+						<p>示例：被告人李某，男，1970年8月2日生，汉族，农民，住赤山市龙安村。 2000年9月7日上午，被告人李某路经该市郊区时，见被害人徐某(女，34岁) 一人在草滩上牧羊，便上前搭话。交谈中李产生了邪念，便将徐拉入附近沟内按倒在地，强行撕扯徐的裤子欲行强奸。徐极力反抗，大声呼救。李害怕罪行暴露，掏出随身携带的匕首向徐的腹部猛刺一刀。徐继续呼救，李一手卡住徐的脖子，另一手用匕首向徐的腹部猛刺数刀，致徐当场死亡。李取下徐手上戴 的手表和身上的80元钱，并将徐的尸体移到附近掩埋。随后，李将被害人放牧 的125只绵羊赶到临近的高家店村，准备销赃时被发现。李畏罪潜逃，后被抓获归案。
+
+						<p>问题：现假定你为本案的公诉人，请根据上述案情撰写一份起诉书。</p>
+
+				</div>
+			</div>
+		</div>
+		<div id="line" ></div>
+		<!--答题区-->
+		<div id="answerArea">
+			<div class=" partingTitle ">
+				
+				<li class="bewrite active2" id="bewrite01" onclick="bewriteCk(this)">问题</li>
+				
+				<li class="rightFloat">
+					<a target="_self" id="copy1" href="javascript:void(0)" onclick="copystr()">复制</a>
+					<a target="_self" id="paste1" href="javascript:void(0)" onclick="parsestr()">粘贴</a>
+					<ul class="moveLi"><a target="_self" id="input1" href="javascript:void(0)" onclick="showEditorMenu2()">输入法</a></ul>
+					<a target="_self" id="zoomwindow1" href="javascript:void(0)" onclick="zoomwindows(this.id)">放大窗口</a>
+				</li>
+			</div>
+			<!--窗口3-->
+			<div class="windowOverflow" id="window03">
+				<div id="C-1" class="itemArea" itemcode="1">
+					<font size="3">现假定你为本案的公诉人，请根据上述案情撰写一份起诉书。
+					<br>答题要求： 1.格式正确，应具备的事项齐全； 2.请求合法有据，定性准确； 3.文字通顺简练，无语法错误和错别字。</font>
+					<p class="spanBold">请在下方答题区内答题。</p>
+					<textarea id="textArea01" class="textAreaWh" onkeyup="ITEM.textAreaKeyUp(this,2)" onblur="ITEM.textAreaKeyUp(this,2)"></textarea>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	
+	$(function() {
+		$("#textArea01").val(getItoanswer(2));
+	});
+	
+	function getItoanswer(itemCode) {
+			var ito;
+			var papers = OBT.paper.getPapers().data;
+			$.each(papers,function(k,v){
+				var items = v.items;
+				$.each(items,function(i,val){
+					if(val.code==itemCode) {
+						ito = val;
+						
+					}
+				});
+			});
+			
+			return ito.answer;
+	}
+	
+	
+		function bewriteCk(obj) {
+			var $this = $(obj);
+			$this.siblings().removeClass("active2");
+			$this.addClass("active2");
+			
+			var id = obj.id;
+			if (id == "bewrite01") {
+				document.getElementById("B-1").className = "itemArea";
+				document.getElementById("B-2").className = "itemAreaNo";
+				document.getElementById("B-3").className = "itemAreaNo";
+				document.getElementById("B-4").className = "itemAreaNo";
+				document.getElementById("B-5").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				//document.getElementsByClassName("onwrite")[0].className = "bewrite";
+				//document.getElementById(id).className = "onwrite";
+				$("#textArea01").val(getItoanswer(5));	
+			}
+			if (id == "bewrite02") {
+				document.getElementById("B-2").className = "itemArea";
+				document.getElementById("B-1").className = "itemAreaNo";
+				document.getElementById("B-3").className = "itemAreaNo";
+				document.getElementById("B-4").className = "itemAreaNo";
+				document.getElementById("B-5").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				$("#textArea02").val(getItoanswer(6));
+			}
+			if (id == "bewrite03") {
+				document.getElementById("B-3").className = "itemArea";
+				document.getElementById("B-1").className = "itemAreaNo";
+				document.getElementById("B-2").className = "itemAreaNo";
+				document.getElementById("B-4").className = "itemAreaNo";
+				document.getElementById("B-5").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				$("#textArea03").val(getItoanswer(7));
+			}
+			if (id == "bewrite04") {
+				document.getElementById("B-4").className = "itemArea";
+				document.getElementById("B-1").className = "itemAreaNo";
+				document.getElementById("B-2").className = "itemAreaNo";
+				document.getElementById("B-3").className = "itemAreaNo";
+				document.getElementById("B-5").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				$("#textArea04").val(getItoanswer(8));
+			}
+			if (id == "bewrite05") {
+				document.getElementById("B-5").className = "itemArea";
+				document.getElementById("B-1").className = "itemAreaNo";
+				document.getElementById("B-2").className = "itemAreaNo";
+				document.getElementById("B-3").className = "itemAreaNo";
+				document.getElementById("B-4").className = "itemAreaNo";
+				//var cls = $(".onwrite").attr("class");
+				//$(".onwrite").attr("class", cls+" "+"bewrite")
+				$("#textArea05").val(getItoanswer(9));
+			}
+		}
+	</script>
+
+</html>

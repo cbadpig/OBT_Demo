@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /> 
+
+  <link type="image/x-icon" href="../common/images/favicon.ico?version=1.0.7401" rel="shortcut icon" >
+  <link href="css/style.css?version=1.0.7401" rel="stylesheet" type="text/css">
+  <link href="css/item.css?version=1.0.7401" rel="stylesheet" type="text/css">
+  <!--答题端弹出层-->
+  <link rel="stylesheet" type="text/css" href="../common/artdialog/ui-dialog.css?version=1.0.7401" />
+
+  <script language="javascript" src="../common/js/jquery.min.js?version=1.0.7401"></script>
+ 
+  <link rel="stylesheet" type="text/css" href="../monitor/css/computer.css?version=1.0.7401">
+  <script src="../monitor/js/manageshow.js?version=1.2.4038"></script> 
+ 
+  <script language="javascript" src="../common/artdialog/dialog-min.js?version=1.0.7401"></script>
+  <!-- 解析url -->
+  <script language="javascript" src="../common/js/purl.js?version=1.0.7401"></script>
+  <!-- jquery事件通知 -->
+  <script language="javascript" src="../common/js/pubsub.min.js?version=1.0.7401"></script>
+  <!-- OBT计算器 -->
+ <!--  <script language="javascript" src="./js/obt.timer.js"></script> -->
+  <script language="javascript" src="./js/countdown2.js?version=1.0.7401"></script>
+  <!-- OBT基础类库 -->
+  <script language="javascript" src="./js/obt.js?version=1.0.7401"></script>
+  <!-- OBT试卷 -->
+  <script language="javascript" src="./js/obt.paper.js?version=1.0.7401"></script>
+  <!-- OBT题目向导 -->
+  <script language="javascript" src="./js/obt.nav.js?version=1.0.7401"></script>
+  <!-- OBT客户端控制 -->
+  <script language="javascript" src="./js/obttest.js?version=1.0.7401"></script>
+  <script language="javascript" src="js/obt.item.js?version=1.0.7401"></script>
+   
+  
+  <script language="javascript" src="./js/purl.js?version=1.0.7401"></script>
+  <script language="javascript" src="../common/js/util.js?version=1.0.7401"></script>
+  
+  <script language="javascript" src="./js/clip.js?version=1.0.7401"></script>
+  
+  <style>
+	 
+  </style>
+  <script type="text/javascript">
+  
+			var kaiGuan = 1;
+			
+			function dddd(){
+								console.log(111)
+								$('.moveLi>div').removeClass('showLi');
+								$(".moveLi").find("div").remove();
+			}
+			function showEditorMenu2() {
+			
+				$('#input1').on('click', function test() {
+					var str = "@@@搜狗拼音@@@QQ拼音@@@百度拼音@@@谷歌拼音@@@搜狗五笔@@@QQ五笔@@@百度五笔@@@万能五笔@@@仓颉";
+					var ss = str.split('@@@');
+					for(var i = 1; i < ss.length; i++) {
+							var Li = document.createElement("li");
+							Li.innerHTML = ss[i];
+							var sz = 25* i;
+							Li.style.top = sz + 'px';
+							$('.moveLi').append(Li);
+						}
+						$('.moveLi>li').addClass('showLi');
+						$('.moveLi>li').click(function() {
+							webFunction.CurrentIme = this.innerText;
+							$('.shuRuFa').css('font-size','12px');
+							$('.shuRuFa').html('输入法：'+this.innerText);
+						})
+						$('.moveLi').mouseleave(function() {
+							$('li').removeClass('showLi');
+							$(".moveLi").find("li").remove();
+							kaiGuan = 1;
+						})
+				});
+			
+				/*$('#input1').on('click', function test() {
+					if(kaiGuan) {
+						var x1 = document.getElementById("webFunction");
+						var str = x1.Imes;
+						
+						if(str==undefined){
+							var oDiv = document.createElement("div");
+							oDiv.innerHTML ="<div class='pg1'>检查到没有安装ocx控件 ，需下载后才能使用此功能,是否下载？ </br></br></br><a class='bbbb1' href='http://119.23.144.7:7091/obt/download/hytInputIME.exe'>是</a><a class='bbbb2' onclick='dddd()' style='float: right;cursor: pointer;'>否</a></div>";
+							oDiv.style.top = 25+ 'px';
+							$('.moveLi').append(oDiv);
+							$('.moveLi>div').addClass('showLi');
+							$('.moveLi').mouseleave(function() {
+							$('.moveLi>div').removeClass('showLi');
+							$(".moveLi").find("div").remove();
+							kaiGuan = 1;
+							})
+						}else{
+						ss = str.split('@@@');
+						console.log(ss);
+						for(var i = 1; i < ss.length; i++) {
+							var Li = document.createElement("li");
+							Li.innerHTML = ss[i];
+							var sz = 25* i;
+							Li.style.top = sz + 'px';
+							$('.moveLi').append(Li);
+						}
+						$('.moveLi>li').addClass('showLi');
+						$('.moveLi>li').click(function() {
+							webFunction.CurrentIme = this.innerText;
+							$('.shuRuFa').css('font-size','12px');
+							$('.shuRuFa').html('输入法：'+this.innerText);
+						})
+						$('.moveLi').mouseleave(function() {
+							$('li').removeClass('showLi');
+							$(".moveLi").find("li").remove();
+							kaiGuan = 1;
+						})
+					};
+					}
+					kaiGuan = 0;
+					
+				});*/
+
+			}
+  
+  
+  
+  
+
+// 放大屏幕
+	// 放大屏幕
+	var flagx=true;
+	function zoomwindows(id) {
+		/*1.放大元素1固定占100%  2.按钮改为 恢复窗口
+		$("#window02").css("height",800);
+		alert(123123);
+		*/
+		var thisH =  document.documentElement.clientHeight||0;
+		var flag = $('#header').is(":hidden");
+		var showDiv=document.getElementById("line");
+		if(flagx){
+			showDiv.style.display='none';
+			flagx=false;
+		}else{
+			showDiv.style.display='block';
+			flagx=true;
+		}
+		var allHeight;
+		if (flag) {
+			allHeight = thisH - 200;
+			
+		} else {
+			allHeight = thisH - 300;
+		}
+
+		if (id == "zoomwindow0" && $("#zoomwindow0").html() == "放大窗口") {
+
+			$("#window02").css("height",allHeight,"weight","100%");
+			$("#I-0").css("height",allHeight);
+			$("#answerArea").css("display", "none");
+			$("#zoomwindow0").html("恢复窗口");
+		}else{
+			$("#window02").css("height",'100%');
+			$("#I-0").css("height",235);
+			$("#answerArea").css("display","block");
+			$("#zoomwindow0").html("放大窗口");
+		}
+		
+		if (id == "zoomwindow1" && $("#zoomwindow1").html() == "放大窗口") {
+		
+			$("#window03").css("height",allHeight,"weight","100%");
+			$("#I-1").css("height",allHeight);
+			$("#dataArea").css("display", "none");
+			$(".textAreaWh").css("height", allHeight-50);
+			$("#zoomwindow1").html("恢复窗口");
+		}else{
+			$("#window03").css("height",200);
+			$("#I-1").css("height",200);
+			$(".textAreaWh").css("height", 50);
+			$("#dataArea").css("display","block");
+			$("#zoomwindow1").html("放大窗口");
+		}	
+	}
+		  
+	 var _obt = OBT.storage.getSession("basepath");
+	 if(OBT.storage.getSession("isAutoTest")=="Y"){
+		dynamicLoading.js("./js/auto.utils.js");
+		dynamicLoading.js("./js/auto.step.2.js");
+	} 
+	function setTheme(th) {
+
+		if(th==1) {
+			$('#layout').css('background-color','#DDEBF6');
+			$('#leftnav').css('background-color','#DDEBF6');
+			$('.subitem a').css('background-color','#DDEBF6');
+		} else if (th==2) {
+			$('#layout').css('background-color','#cae0e0');
+			$('#leftnav').css('background-color','#cae0e0');
+			$('.subitem a').css('background-color','#cae0e0');
+		} else if (th==3) {
+			$('#layout').css('background-color','#f5e9dc');
+			$('#leftnav').css('background-color','#f5e9dc');
+			$('.subitem a').css('background-color','#f5e9dc');
+		} else if (th==4) {
+			$('#layout').css('background-color','#f5dce4');
+			$('#leftnav').css('background-color','#f5dce4');
+			$('.subitem a').css('background-color','#f5dce4');
+		} else if (th==5) {
+			$('#layout').css('background-color','#deddf6');
+			$('#leftnav').css('background-color','#deddf6');
+			$('.subitem a').css('background-color','#deddf6');
+		} else {
+			$('#layout').css('background-color','#DDEBF6');
+			$('#leftnav').css('background-color','#DDEBF6');
+			$('.subitem a').css('background-color','#DDEBF6');
+		}
+		
+		OBT.storage.setSession("theme",th);
+	}
+	function setFont(font) {
+		$("#window02").css("font-size",font+"px");
+	}
+  </script>
+  
+ 
+</head>
+<body>
+		<object style="display:none;" id="webFunction" classid="clsid:8DCDF879-B90E-4CAB-B04C-E118B575725F"><param name="FunctionName" value="func" /></object>
+		<script type="text/javascript" for="webFunction" event="OnEvent(source, eventtype, eventparam)">
+			webFunctionHandleEvent(source, eventtype, eventparam);
+		</script>
+  <div>
+	
+    <div id="layout">
+    	<div class="zk"></div>
+      <div id="header">
+        <div class="infoNav">
+        	<ul>
+        	  <li>
+	            <img id="detailbtn" class = "kspic" style="width:74px;height:96px;border:none;margin-top:-7px;margin-right:10px;cursor:pointer"  src="images/blue.jpg" onerror="this.src='images/blue.jpg'"></img>
+	          </li>
+	          <li>
+	          	姓&nbsp;名：<span >XXX</span><br/>  
+				性&nbsp;别：<span >男</span><br/> 
+	          	准考证号：<span >88888888</span><br/> 
+	          	身份证号：<span >888888888888888888</span><br/> 
+	          </li>
+	          <!-- <li>
+	            <input id="detailbtn" class="submitbutton" name="详细信息" value="详细信息" type="button"/>
+	            <img style="width:104px;height:132px;border:none;"  src="" onerror="this.src='images/blue.jpg'"></img>
+	          </li> -->
+        	</ul>
+        </div>
+        <div class="clockNav">
+          <ul>
+            <li class="clockNav_m">
+              <div>
+                	考试剩余时间:<span id="clock"></span>
+              </div>
+            </li>
+            <li>
+              <input id="submitbtn" class="submitbutton" name="交卷" type="button" value="交 卷"></li>
+          </ul>
+        </div>
+        <div class="subjectNav">
+          <span id="projectName" class="prname"></span>
+          <br/>
+          <span id="subjectName"></span><span>（模拟系统）</span>
+        </div>
+      </div>
+      <div id="main">
+        <div id="leftnav">
+          <div id="itembar"></div>
+          <div class="submark">
+            说明：
+            <br/>
+            1.题号右方的“*”符号代表该小题尚未选择答案。
+            <br/>
+            2.题号右方的“?”符号代表该小题做过标记。
+            <br/>
+            3.选择选项的同时自动保存答案。
+          </div>
+          <div class="subcal">
+             <!--<input name="计算器" value="" type="button" onclick="showcalculator();"/>
+             <input type="hidden" value="" name="state"/>-->
+          </div>
+        </div>
+        <div class="middlebar">
+          <input type="button" id="navbtn"/>
+        </div>
+        <div id="container">
+          <!--<iframe id="question_frame" width="100%" height="95%" frameborder="0" src=""></iframe>-->
+          <div id="question_frame2" style=" "><div id="sjHtml" style="padding-top:10px;padding-left:10px;"></div></div>
+          
+		  <div id="footer">
+            <label for="testflag">
+            	<input name="testflag" id="testflag" type="checkbox" style="width:16px;height:16px;vertical-align:middle;"> 标记
+            </label>
+            &nbsp;
+            <button id="prevbtn" name="上一题" type="button">上一题</button>
+			&nbsp;
+			<span id="dqName">第&nbsp;<span id="xtName"></span>&nbsp;题</span>
+			<span id="xxList">
+				
+			</span>
+            &nbsp;
+            <button id="nextbtn" name="下一题" type="button">下一题</button>
+			
+			<div class="shuRuFa"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="dialog" style="display:none">
+    <div class="dialog_main">
+      <div class="dialog_bt"></div>
+      <div class="dialog_img">
+        <img src="./images/ts_2.gif"  />  
+      </div>
+      <div class="dialog_content">
+        <li class="dialog_text"><font color=red><span i="content"></span></font>
+        </li>
+        <li>
+          <div i="button" class="dialog_button" id="auto_sbm_btn"></div>
+        </li>
+      </div>
+    </div>
+  </div>
+  <div id="uploadAnswer" style="display:none;">
+  	<div class="up_main">
+  		<div class="txttitle">
+  			<span class="up_title prname"></span>
+  		</div>
+  	</div>
+  </div>
+  <div id="ten_dialog" style="display:none;">
+  	<div class="ten_main">
+  		<div class="txttitle">
+	  		<span class="up_title prname"></span>
+  		</div>
+  		<div class="txtcontent">
+	  		<div class="ten_content">
+	  			<span i="content"></span>
+		        <div i="button">确定</div>
+	      	</div>
+  		</div>
+  	</div>
+  </div>
+  
+    <div id="dialog_zp" style="display:none">
+    <div class='ks_info' >
+      <div style='height:10px;'></div>
+      <div class='title_txt'>考生照片信息：</div>
+      <img id="hczp" style="float:left;margin-left:50px;margin-top:20px;width:104px;height:132px;" onerror="this.src='images/blue.jpg'"></img>
+      <div style="font-weight:bold;font-size:18px;color:red;margin-left:220px;margin-top:20px;width:250px;height:100px;">请核查你的照片是否正确</div>
+      <div i="button" class="dialog_button" style="margin-left:270px"></div>
+    </div>
+  </div>
+  <div id="ksinfodialog" style="display:none">
+    <div class='ks_info' >
+      <div style='height:10px;'></div>
+      <div class='title_txt'>考生详细信息：</div>
+      <TABLE align='center' style='margin:0 auto;'>
+        <TBODY>
+          <TR>
+            <TD class='td-photo' rowspan='7'>
+              <img src='#' class="kspic" width='104' height='132' onerror="this.src='images/blue.jpg'" />  
+            </TD>
+            <TH>姓 <SPAN class='block'></SPAN> 名： </TH>
+            <TD> <SPAN id="xm"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>性 <SPAN class='block'></SPAN>  别： </TH>
+            <TD> <SPAN id="xb"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>准考证号：</TH>
+            <TD> <SPAN id="zkzh"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>身份证号：</TH>
+            <TD> <SPAN id="zjbm"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>&nbsp;</TH>
+            <TD>
+              <div i="button" class="dialog_button"></div>
+            </TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+    </div>
+  </div>
+</body>
+</html>

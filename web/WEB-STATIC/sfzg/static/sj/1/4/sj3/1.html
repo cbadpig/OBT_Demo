@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+		<link href="css/item.css?version=1.0.7401" rel="stylesheet" type="text/css">
+		<title>item 1</title>
+		<script type="text/javascript">
+		$(function() {
+		$("#textArea00").val(getItoanswer(1));
+	});
+	
+	function getItoanswer(itemCode) {
+			var ito;
+			var papers = OBT.paper.getPapers().data;
+			$.each(papers,function(k,v){
+				var items = v.items;
+				$.each(items,function(i,val){
+					if(val.code==itemCode) {
+						ito = val;
+						
+					}
+				});
+			});
+			
+			return ito.answer;
+	}
+		</script>
+	</head>
+
+	<body>
+		<!--统一标题区-->
+		<div class="paperTitle">
+			<li class="single">试卷</li>
+			<li>
+				<a target="_self" id="mark" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('yellow');">题干标识</a>
+				<a target="_self" id="unmark" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('#FFFFFF')">取消标识</a>
+			</li>
+		</div>
+			<!--窗口1-->
+
+
+		<!--资料区-->
+		<div id="dataArea">
+			<div class=" partingTitle ">
+				<span class="spanBold" style="">一、论述题（本题20分）</span>
+				<li class="rightFloat">
+					<a target="_self" id="mark1" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('yellow');">题干标识</a>
+					<a target="_self" id="unmark1" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('#FFFFFF')">取消标识</a>
+					<a target="_self" id="zoomwindow0" href="javascript:void(0)" onclick="zoomwindows(this.id)">放大窗口</a>
+				</li>
+			</div>
+				<!--窗口2-->
+			<div class="windowOverflow" id="window02">
+				<div id="I-0" class="itemArea2" itemcode="1">
+						<p>材料一：法律本来应该具有定分止争的功能，司法审判本来应该具有终局性的作用，如果司法不公、人心不服，这些功能就难以实现。……我们提出要努力让人民群众在每一个司法案件中都感受到公平正义，所有司法机关都要紧紧围绕这个目标来改进工作，重点解决影响司法公正和制约司法能力的深层次问题。（摘自习近平：《第十八届中央政治局第四次集体学习时的讲话》）</p>
+						<p>材料二：新华社北京2017年5月3日电：中共中央总书记、国家主席、中央军委主席习近平3日上午来到中国政法大学考察。习近平指出，我们有我们的历史文化，有我们的体制机制，有我们的国情，我们的国家治理有其他国家不可比拟的特殊性和复杂性，也有我们自己长期积累的经验和优势。</p>
+						<p>问题：请根据材料一和材料二，结合自己对中华法文化中“天理、国法、人情”的理解，谈谈在现实社会的司法、执法实践中，一些影响性裁判、处罚决定公布后，有的深获广大公众认同，取得良好社会效果，有的则与社会公众较普遍的认识有相当距离，甚至截然相反判断的原因和看法。</p>
+					
+				</div>
+			</div>
+		</div>
+		<!--拖拽线-->
+        <div id="line" ></div>
+		<!--答题区-->
+		<div id="answerArea">
+			<div class=" partingTitle ">
+				
+				<li class="bewrite active2">问题</li>
+				<li class="rightFloat">
+					<a target="_self" id="copy1" href="javascript:void(0)" onclick="copystr()">复制</a>
+					<a target="_self" id="paste1" href="javascript:void(0)" onclick="parsestr()">粘贴</a>
+					<ul class="moveLi"><a target="_self" id="input1" href="javascript:void(0)" onclick="showEditorMenu2()">输入法</a></ul>
+					<a target="_self" id="zoomwindow1" href="javascript:void(0)" onclick="zoomwindows(this.id)">放大窗口</a>
+				</li>
+			</div>
+				<!--窗口3-->
+			<div class="windowOverflow" id="window03">
+				<div id="B-1" class="itemArea" itemcode="1">
+					<font size="3">请根据材料一和材料二，结合自己对中华法文化中“天理、国法、人情”的理解，谈谈在现实社会的司法、执法实践中，一些影响性裁判、处罚决定公布后，有的深获广大公众认同，取得良好社会效果，有的则与社会公众较普遍的认识有相当距离，甚至截然相反判断的原因和看法。
+					</br>答题要求： 1.无观点或论述、照搬材料原文的不得分； 2.观点正确，表述完整、准确； 3.总字数不少于500字。</font>
+					<p class="spanBold">请在下方答题区内答题。</p>
+					<textarea id="textArea00" class="textAreaWh" onkeyup="ITEM.textAreaKeyUp(this,1)" onblur="ITEM.textAreaKeyUp(this,1)"></textarea>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+<script>
+
+
+ </script>
+</html>

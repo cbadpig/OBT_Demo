@@ -1,0 +1,20 @@
+body { font-family:Verdana, Geneva, sans-serif; margin:0 auto; padding:0; background-color:#2d6dae; }
+ul,li { padding:0; margin:0; list-style-type:none;}
+
+.mainback { position:relative; top:0; left:0; width:1024px; height:768px; margin:0 auto; background:url(../images/end.png) no-repeat;}
+
+.kspic { position:absolute; top:20px; left:40px; width:100px; height:120px;}
+
+.ksinfo { position:absolute; top:25px; left:150px; width:300px; height:120px; font-size:14px; color:#106b95; font-family:"微软雅黑"; font-weight:bold; line-height:30px; word-spacing:2px}
+
+.kstime { position:absolute; top:61px; right:50px; width:241px; height:30px; background:url(../images/timeback.png) no-repeat; color:#F00; font-size:16px; font-family:"微软雅黑"; padding-top:10px; padding-left:20px; font-weight:bold;}
+
+.ksname { position:absolute; top:150px; left:130px; font-size:32px; color:#fa863e; font-family:"微软雅黑"; font-weight:bold; }
+
+.centerText { position:absolute; top:195px; left:34px; width:910px; height:516px; margin:0 auto; background-color:#FFF; font-size:12px; overflow:auto; padding:10px 20px 10px 20px;}
+
+
+
+
+
+

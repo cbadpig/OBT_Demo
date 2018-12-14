@@ -1,0 +1,30 @@
+
+body {
+	background-image: url("../images/wzh_01.jpg");
+	background-repeat: repeat-x;
+	background-color: #f5f8fd;
+}
+.STYLE1 {
+	font-family: "宋体";
+	font-size: 14px;
+}
+.font_zc_small{
+    font-size:120px;
+	color:#F00;
+	font-family:Tahoma, Geneva, sans-serif; font-weight:bold;
+}
+.buttonDl {
+	width:72px;
+	height:25px;
+	border:0px;
+	background:url(../images/wzh_dl.gif) no-repeat;
+}
+
+
+.buttonDl { background:url(../images/login_0.jpg) no-repeat; width:75px; height:28px; border:0;cursor:pointer;}
+.buttonDlOnlie { background:url(../images/login_1.jpg) no-repeat; width:75px; height:28px;border:0;cursor:pointer;}
+.buttonDlDown { background:url(../images/login_2.jpg) no-repeat; width:75px; height:28px;border:0;cursor:pointer;}
+
+.buttonCz { background:url(../images/reset_0.jpg) no-repeat; width:75px; height:28px; border:0;cursor:pointer;}
+.buttonCzOnlie { background:url(../images/reset_1.jpg) no-repeat; width:75px; height:28px;border:0;cursor:pointer;}
+.buttonCzDown { background:url(../images/reset_2.jpg) no-repeat; width:75px; height:28px;border:0;cursor:pointer;}

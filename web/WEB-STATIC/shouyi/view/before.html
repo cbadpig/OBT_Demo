@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/> 
+
+  <link type="image/x-icon" href="../common/images/favicon.ico?version=1.0.7406" rel="shortcut icon" />
+  <link href="css/style.css?version=1.0.7406" rel="stylesheet" type="text/css">
+  <link href="css/item.css?version=1.0.7406" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../common/artdialog/ui-dialog.css?version=1.0.7406" />
+  
+  <link rel="stylesheet" type="text/css" href="./css/before.css?version=1.0.7402" />
+
+  <script language="javascript" src="../common/js/jquery.min.js?version=1.0.7406"></script>
+  <script language="javascript" src="../common/artdialog/dialog-min.js?version=1.0.7406"></script>
+<!--   <script language="javascript" src="../common/js/jquery.countdown.min.js"></script> -->
+  <script language="javascript" src="./js/obt.js?version=1.0.7406"></script>
+<!--   <script language="javascript" src="./js/obt.timer.js"></script> -->
+  <script language="javascript" src="./js/countdown.js?version=1.0.7406"></script>
+ <!--  <script language="javascript" src="./js/obttimer.js"></script> -->
+  <script language="javascript" src="./js/before.js?version=1.0.7402"></script>
+ <script type="text/javascript">
+	function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    var kmtype = getQueryString("kmtype");
+ 	var _obt = OBT.storage.getSession("basepath");
+ 	function inputObtTest(){
+ 		OBT.storage.removeSession("ss");
+ 		window.location.replace("obttest.html?kmtype="+kmtype);
+ 	}
+ </script>
+</head>
+<body>
+
+    <div class="mainback">
+      <div class="kspic">
+        <img id="kspic" src="images/blue.jpg" width="104" height="132" onerror="this.src='images/blue.jpg'">
+      </div>
+      <div class="ksinfo" >
+        	姓<span class="zhidden">考考考考考</span>名：<span id="ksxm"></span><br />
+        	座<span class="zhidden">考考</span>位<span class="zhidden">考考</span>号：<span id="ksxb"></span><br />
+        	准<span class="zhidden">考</span>考<span class="zhidden">考</span>证<span class="zhidden">考</span>号：<span id="zkzh"></span><br />
+        	有效身份证件号：<span id="sfzh"></span>
+      </div>
+      <div class="kstime">
+        <div id="msgTip">
+        	 距离考试还有：<span id="clock"></span>
+        	 <span><a href="#" onclick="inputObtTest()" style="text-decoration:none;color:#FFFF00;">进入考试</a></span>
+        </div>
+		
+      </div>
+	  <div style="float:right;margin-top:120px;font-weight:bold;margin-right:50px;font-size:18px;color:black;">
+			注：正式考试时，考生无法自行开始考试
+	  </div>
+      <div class="ksname"></div>
+      <iframe class="centerText" frameborder="0" id="mainText" src=""></iframe>
+      <div id='kckc'>
+	  	<div class="kw kc" id="kwyq">考生须知</div>
+	    <div class="cz kc" id="czsm">操作说明</div>    
+	  </div>
+   	</div>
+	
+	 <div id="ksinfodialog" style="display:none">
+    <div class='ks_info' >
+      <div style='height:10px;'></div>
+      <div class='title_txt'>考生详细信息：</div>
+	   <div class='td-photo'>
+		<img src='#' style="margin-top:76px;margin-left:40px;" class="kspic" width='104' height='132' onerror="this.src='images/blue.jpg'" />  
+	  </div>
+      <TABLE align='center' style='margin:0 auto;margin-left:160px;'>
+        <TBODY>
+          <TR>
+            <TH>姓<span class="zhidden">考考考考考</span>名:</TH>
+            <TD style="width:80px"> <SPAN id="xm"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>座<span class="zhidden">考考</span>位<span class="zhidden">考考</span>号:</TH>
+            <TD> <SPAN id="xb"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>准<span class="zhidden">考</span>考<span class="zhidden">考</span>证<span class="zhidden">考</span>号:</TH>
+            <TD> <SPAN id="zkzh2"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>有效身份证件号:</TH>
+            <TD> <SPAN id="zjbm"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>&nbsp;</TH>
+            <TD>
+              <div i="button" class="dialog_button"></div>
+            </TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+    </div>
+  </div>
+  
+</body>
+</html>

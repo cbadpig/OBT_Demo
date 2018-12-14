@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /> 
+
+  <link type="image/x-icon" href="../common/images/favicon.ico?version=1.0.7406" rel="shortcut icon" >
+
+
+  <link href="../common/magnify/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../common/magnify/css/jquery.magnify.css" rel="stylesheet">
+  
+  <link href="css/style.css?version=1.5" rel="stylesheet" type="text/css">
+  <link href="css/item.css?version=1.0.7406" rel="stylesheet" type="text/css">
+  <!--答题端弹出层-->
+  <link rel="stylesheet" type="text/css" href="../common/artdialog/ui-dialog.css?version=1.0.7406" />
+<link rel="stylesheet" href="../common/viewer/viewer.jquery.min.css?version=1.0.7406" type="text/css">
+  <script language="javascript" src="../common/js/jquery.min.js?version=1.0.7406"></script>
+ 
+  <link rel="stylesheet" type="text/css" href="../monitor/css/computer.css?version=1.0.7406">
+  
+
+   <script src="../common/magnify/html5shiv.min.js"></script>
+    <script src="../common/magnify/respond.min.js"></script>
+	
+	
+  <script src="../common/magnify/bootstrap.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../common/magnify/jquery.magnify.js?version=1.0.74061"></script>
+	
+	
+	
+  <script src="../monitor/js/manageshow.js?version=1.2.4038"></script> 
+ 
+  <script language="javascript" src="../common/artdialog/dialog-min.js?version=1.0.7406"></script>
+  <!-- 解析url -->
+  <script language="javascript" src="../common/js/purl.js?version=1.0.7406"></script>
+  <!-- jquery事件通知 -->
+  <script language="javascript" src="../common/js/pubsub.min.js?version=1.0.7406"></script>
+  <!-- OBT计算器 -->
+ <!--  <script language="javascript" src="./js/obt.timer.js"></script> -->
+  <script language="javascript" src="./js/countdown2.js?version=1.0.7406"></script>
+  <!-- OBT基础类库 -->
+  <script language="javascript" src="./js/obt.js?version=1.0.7406"></script>
+  <!-- OBT试卷 -->
+  <script language="javascript" src="./js/obt.paper.js?version=1.0.7406"></script>
+  <!-- OBT题目向导 -->
+  <script language="javascript" src="./js/obt.nav.js?version=1.0.7406"></script>
+  <!-- OBT客户端控制 -->
+  <script language="javascript" src="./js/obttest.js?version=1.0.7406"></script>
+  <script language="javascript" src="./js/jquery.mousewheel.js?version=1.0.7406"></script>
+  <script language="javascript" src="js/obt.item.js?version=1.0.7406"></script>
+  <script language="javascript" src="./js/purl.js?version=1.0.7406"></script>
+  <script language="javascript" src="../common/js/util.js?version=1.0.7406"></script>
+  <script language="javascript" src="../common/jquery-photo-gallery/jquery.photo.gallery.js?version=311"></script>
+  <script src="../common/viewer/viewer-jquery.min.js?version=1.0.7406"></script>
+  <script type="text/javascript">
+	$(function(){
+		$(".single").text($("#subject_title_1  span").text()+" >> A1题型");
+		OBT.storage.setSession("curkm"+kmtype,1);
+	});
+   function getQueryString(name) {
+    
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    var kmtype = getQueryString("kmtype");
+	
+	     var _obt = OBT.storage.getSession("basepath");
+  		 if(OBT.storage.getSession("isAutoTest")=="Y"){
+	  		dynamicLoading.js("./js/auto.utils.js");
+	  		dynamicLoading.js("./js/auto.step.2.js");
+  		} 
+		var flag_in = 1;
+		$(function(){
+			$("#desc").click(function(){
+				
+					//$(this).children("p").slideToggle()
+					$("#showOrHidden").slideToggle();
+					document.getElementById('leftnav').scrollTop = 0 ;
+					if(flag_in == 1){
+						$("#xy").html("（点击可显示）");
+						flag_in =2;
+					}else{
+						$("#xy").html("（点击可隐藏）");
+						
+						flag_in=1;
+					}
+
+			})
+		})
+		function openPic(zthis){
+			/**var image = new Image();
+			image.src=zthis.src;
+			var viewer = new Viewer(image, {
+				hidden: function () {
+					viewer.destroy();
+				},
+				toolbar: {
+				  zoomIn: true,
+				  zoomOut: true
+				},
+			});
+			viewer.show();
+			*/
+			$(zthis).viewer({
+				url: 'data-original',
+				toolbar: {
+				  zoomIn: true,
+				  zoomOut: true
+				}
+			});
+		}
+		function showSubject(type){
+			
+			//判断是否当前科目
+			var curkm = OBT.storage.getSession("curkm"+kmtype);
+			if ((!curkm&&type==1)||curkm==type) {
+				return;
+			}
+			
+			$('#itembar').empty();
+			OBT.storage.setSession("curkm"+kmtype,type);
+		
+			if(type == 1){
+				var curito = OBT.paper.getCurItem();
+				OBT.storage.setSession("kmLastItem"+kmtype+"2",JSON.stringify(curito));
+				var ito = JSON.parse(OBT.storage.getSession("kmLastItem"+kmtype+"1"));
+				
+				if (!ito) {
+					ito = OBT.paper.getPapers().data[0].items[0];
+				}
+				$.publish(OBT.EVENT_ITEM_CHANGING,[curito,ito]);
+				
+				$("#subject_title_1").css("background","#10646f");
+				$("#subject_title_2").css("background","");
+				$("#subject_title_1 img").attr("src","images/tab1.png");
+				$("#subject_title_2 img").attr("src","images/tab2.png");
+				$("#subject_title_1 span").css("color","#FFF");
+				$("#subject_title_2 span").css("color","");	
+				$(".single").text($("#subject_title_1  span").text()+" >> A1题型");
+				
+			} else if(type == 2){
+				var curito = OBT.paper.getCurItem();
+				OBT.storage.setSession("kmLastItem"+kmtype+"1",JSON.stringify(curito));
+				var ito = JSON.parse(OBT.storage.getSession("kmLastItem"+kmtype+"2"));
+	
+				if(kmtype == 1&&!ito){
+					ito = OBT.paper.getPapers().data[0].items[109];
+				}else if(kmtype == 2&&!ito){
+					ito = OBT.paper.getPapers().data[0].items[111];
+				}
+				$.publish(OBT.EVENT_ITEM_CHANGING,[curito,ito]);
+				
+				$("#subject_title_1").css("background","");
+				$("#subject_title_2").css("background","#10646f");
+				$("#subject_title_1 img").attr("src","images/tab2.png");
+				$("#subject_title_2 img").attr("src","images/tab1.png");
+				$("#subject_title_1 span").css("color","");
+				$("#subject_title_2 span").css("color","#FFF");
+				$(".single").text($("#subject_title_2 span").text()+" >> A1题型");			
+			}
+			$('#itembar').ItemNav(type);
+			var curito = OBT.paper.getCurItem();
+			document.getElementById("IIT-"+ curito.code +"").scrollIntoView(false);
+			var maxW = window.screen.availWidth;
+			$(".itemGroupTitle").css("width",maxW-maxW*0.2-40);
+		}
+  	</script>
+  <!-- <script language="javascript" src="./js/auto.utils.js"></script>
+  <script language="javascript" src="./js/auto.step.2.js"></script> -->
+ <style>
+	.image-set{margin-left:23px;}
+	.navs:visited{color:#062e30;}
+	.green1:visited{color:#062e30;}
+	.img_show_pointer{cursor:pointer}
+	.img_float {
+		
+	}
+	.tupian_info_22,.tupian_info_102,.tupian_info_79,.tupian_info_XIII {
+		font-size:14px;
+		font-family:"宋体";
+		margin:0;
+	}
+	.tupian_info_22 {
+		margin-left:18px;
+	}
+	.tupian_info_102 {
+		margin-left:80px;
+	}
+	.tupian_info_79 {
+		margin-left:8px;
+	}
+	.tupian_info_XIII {
+		margin-left:50px;
+	}
+  <style>
+  .magnify-modal {
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .magnify-header .magnify-toolbar {
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+  .magnify-stage {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-width: 0;
+  }
+
+  .magnify-footer .magnify-toolbar {    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .magnify-header,
+  .magnify-footer {
+    pointer-events: none;
+  }
+
+  .magnify-button {
+    pointer-events: auto;
+  }
+  .subject_title{
+	float:left;
+	width:50%;
+	height:25px;
+	padding-top:3px;
+  }
+  .subject_title:hover{
+	background-color:#10646f;
+  }
+  .magnify-modal {
+		cursor:pointer;
+}
+  </style>
+ </style>
+</head>
+<body>
+<div id="imgs" style="display:none;position:absolute;z-index:1;width:500px;height:500px;float:right;left:500px;top:50px;">
+	<img src=""/>
+	<p id="txt" style="color:red;background-color:white;margin:0px;text-align:center;padding:5px;">点击图片可关闭</p>
+</div>
+<div id="zdhcs" style="margin-left:180px;margin-top:40px;font-size:40px;color:red;font-weight:bold;position:absolute;z-index:102;display:none">
+     自动化测试中...</div>
+  <form>
+    <div id="layout">
+    	<div class="zk"></div>
+      <div id="header">
+        <div class="infoNav">
+        	<ul>
+        	  <li>
+	            <img id="detailbtn" class = "kspic" style="width:74px;height:96px;border:none;margin-top:-7px;margin-right:10px;cursor:pointer"  src="images/blue.jpg" onerror="this.src='images/blue.jpg'"></img>
+	          </li>
+	           <li style="font-size:14px;color:#044950;position:relative;top:-8px;">
+	          	<div style="height:20px;"><label>姓&emsp;&emsp;&emsp;&emsp;&emsp;名：</label><span id="ksxm"></span></div>
+							<div style="height:20px;"><label>座&emsp;&emsp;位&emsp;&emsp;号：</label><SPAN id="ksxb"></SPAN></div>
+							<div style="height:20px;"><label>准&emsp;考&emsp;证&emsp;号：</label><SPAN id="zkzh2"></SPAN></div>
+	          	<div style="height:20px;"><label>有效身份证件号：</label><span id="sfzh"></span></div>
+	          </li>
+	          <!-- <li>
+	            <input id="detailbtn" class="submitbutton" name="详细信息" value="详细信息" type="button"/>
+	            <img style="width:104px;height:132px;border:none;"  src="" onerror="this.src='images/blue.jpg'"></img>
+	          </li> -->
+        	</ul>
+        </div>
+        <div class="clockNav">
+          <ul>
+            <li class="clockNav_m">
+              <div style="font-size:18px;color:red;font-weight:normal;">
+                	考试剩余时间:&nbsp;<span id="clock"></span>
+              </div>
+			  <div style="margin-top:7px;font-size:16px;text-align:center">
+                	<!--<div style="float:left;padding:2px;text-align:left;border:1px solid red;">
+						<span style="color:#044950;">未答:&nbsp;<span id="notPaperCount" style="color:red;"></span>&nbsp;道</span>
+					</div>
+					<div  style="float:left;padding:2px;text-align:left;margin-left:5px;border:1px solid red;">        
+						<span style="color:#044950;">已答:&nbsp;<span id="completePaperCount" style="color:black;"></span>&nbsp;道</span>
+					</div>	-->
+
+					<span style="color:#044950;">未答:&nbsp;<span id="notPaperCount" style="color:red;"></span>&nbsp;道</span>		
+					<span style="color:#044950;">已答:&nbsp;<span id="completePaperCount" style="color:black;"></span>&nbsp;道&nbsp;</span>			
+              </div>
+            </li>
+            <!-- 
+			    <li>
+				   <input id="submitbtn" class="submitbutton" name="交卷" type="button" value="交 卷">
+			   </li>
+			  -->
+          </ul>
+        </div>
+        <div class="subjectNav">
+          <span id="projectName" style="font-size:28px;font-weight:normal; color:#044950" class="prname"></span>
+          <br/>
+          <span id="subjectName" style="color:#044950;font-size:24px;font-weight:normal;"></span>
+        </div>
+      </div>
+      <div id="main">
+		<div style="font-size:18px;height:25px;width:19%;margin-top:-1px;text-align:center;text-align:center;position:fixed;cursor:pointer;">
+				<div id="subject_title_1" tabindex="1" style="background:#10646f;font-family: '微软雅黑';" class="subject_title" onclick="showSubject(1);"><span style="color:#FFF" >基础科目</span>&nbsp;&nbsp;<img src="images/tab1.png" /></div>
+				<div id="subject_title_2" tabindex="2"  style="font-family: '微软雅黑';"  class="subject_title" onclick="showSubject(2);"><span>预防科目</span>&nbsp;&nbsp;<img src="images/tab2.png" /></div>
+		</div>
+        <div id="leftnav">
+		   <div class="submark" style="font-size:18px;height:20px;">
+			<div id="desc" style="background-color:white;">
+				<h6 style="margin:0px;margin-left:-4px;line-height:20px;text-align:center;background-color:#a1dbdf;cursor:pointer;">
+				      <span style="color:black;">注意事项</span><span id="xy" style="color:#044950;">（点击可隐藏/展开）</span>
+				</h6>								
+			</div>
+			</div>
+          <div id ="showOrHidden" class="submark" style="font-size:12px;line-height:14px;height:87px;background-color:#F2F2F2;">
+								<table border="0" style="margin:0;padding:0;">
+									  <tr>
+										<td style="vertical-align:top;">1、</td>
+										<td>题号右方的“*”符号代表该小题尚未选择答案。</td>
+									  </tr>
+									   <tr>
+										<td style="vertical-align:top;">2、</td>
+										<td>题号右方的“?”符号代表该小题做过标记。</td>
+									  </tr>
+									   <tr>
+										<td style="vertical-align:top;">3、</td>
+										<td>选择选项的同时自动保存答案。</td>
+									  </tr>
+								</table>
+								<!--<p style="margin:0px;line-height:15px;margin-bottom:2px;;padding:1px 10px;">
+									1、题号右方的“*”符号代表该小题尚未选择答案。
+									
+								</p>
+								<p style="margin:0px;line-height:15px;margin-bottom:2px;padding:1px 10px;">2、题号右方的“?”符号代表该小题做过标记。</p>
+								<p style="margin:0px;line-height:15px;margin-bottom:4px;padding:1px 10px;">3、选择选项的同时自动保存答案。</p>-->
+		  </div>
+          <div id="itembar"></div>
+
+          <div class="subcal">
+             <!--<input name="计算器" value="" type="button" onclick="showcalculator();"/>
+             <input type="hidden" value="" name="state"/>-->
+          </div>
+        </div>
+ <!--        <div class="middlebar">
+          <input type="button" id="navbtn"/>
+        </div> -->
+        <div id="container">
+          <!--<iframe id="question_frame" width="100%" height="95%" frameborder="0" src=""></iframe>-->
+          <div id="question_frame2" style=""><div id="sjHtml" style="padding-top:0px;margin-bottom:0px;margin-left:10px;border-bottom: 1px solid #ECECEC;"></div></div>
+          <div id="footer">
+            <label for="testflag">
+            	<input name="testflag" id="testflag" type="checkbox" style="width:16px;height:16px;vertical-align:middle;"> 标记
+            </label>
+            &nbsp;
+            <button id="prevbtn" name="上一题" type="button" style="font-weight:bold;">上一题</button>
+            &nbsp;
+            <button id="nextbtn" name="下一题" type="button" style="font-weight:bold;">下一题</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div id="dialog" style="display:none">
+    <div class="dialog_main">
+      <div class="dialog_bt"></div>
+      <div class="dialog_img">
+        <img src="./images/ts_2.gif"  />  
+      </div>
+      <div class="dialog_content">
+        <li class="dialog_text"><font color=red><span i="content"></span></font>
+        </li>
+        <li>
+          <div i="button" class="dialog_button" id="auto_sbm_btn"></div>
+        </li>
+      </div>
+    </div>
+  </div>
+  <div id="uploadAnswer" style="display:none;">
+  	<div class="up_main">
+  		<div class="txttitle">
+  			<span class="up_title prname"></span>
+  		</div>
+  	</div>
+  </div>
+  <div id="ten_dialog" style="display:none;">
+  	<div class="ten_main">
+  		<div class="txttitle">
+	  		<span class="up_title prname"></span>
+  		</div>
+  		<div class="txtcontent">
+	  		<div class="ten_content">
+	  			<span i="content"></span>
+		        <div i="button">确定</div>
+	      	</div>
+  		</div>
+  	</div>
+  </div>
+  
+    <div id="dialog_zp" style="display:none">
+    <div class='ks_info' >
+      <div style='height:10px;'></div>
+      <div class='title_txt'>考生照片信息：</div>
+      <img id="hczp" style="float:left;margin-left:50px;margin-top:20px;width:104px;height:132px;" onerror="this.src='images/blue.jpg'"></img>
+      <div style="font-weight:bold;font-size:18px;color:red;margin-left:220px;margin-top:20px;width:250px;height:100px;">请核查你的照片是否正确</div>
+      <div i="button" class="dialog_button" style="margin-left:270px"></div>
+    </div>
+  </div>
+  <div id="ksinfodialog" style="display:none">
+    <div class='ks_info' >
+      <div style='height:10px;'></div>
+      <div class='title_txt'>考生详细信息：</div>
+	  <div class='td-photo'>
+		<img src='#' class="kspic" width='104' height='132' onerror="this.src='images/blue.jpg'" />  
+	  </div>
+	  
+      <TABLE align='center' style="border-collapse:separate; border-spacing:0px 4px;">
+        <TBODY>
+		  <TR>
+            <TH>姓<span class="zhidden">考考考考考</span>名:</TH>
+            <TD style="width:80px"><SPAN id="xm"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>座<span class="zhidden">考考</span>位<span class="zhidden">考考</span>号: </TH>
+            <TD> <SPAN id="xb"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>准<span class="zhidden">考</span>考<span class="zhidden">考</span>证<span class="zhidden">考</span>号:</TH>
+            <TD> <SPAN id="zkzh"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>有效身份证件号:</TH>
+            <TD> <SPAN id="zjbm"></SPAN> </TD>
+          </TR>
+          <TR>
+            <TH>&nbsp;</TH>
+            <TD>
+              <div i="button" class="dialog_button"></div>
+            </TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+    </div>
+  </div>
+</body>
+</html>

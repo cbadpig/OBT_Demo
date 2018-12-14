@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>国家统一法律职业资格考试</title>
+	<link type="image/x-icon" href="common/images/favicon.ico?version=1.0.4088" rel="shortcut icon" />
+  	<script language="javascript" src="common/js/jquery.min.js"></script>
+  	<script language="javascript" src="exam/js/obt.js"></script>
+<style>
+body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	background-color:#2d6dae;
+}
+.endBack2 { 
+	position:absolute; 
+	top:50%; left:50%; 
+	width:1024px; height:768px; 
+	margin-left:-512px;
+	margin-top:-384px;
+	overflow:hidden;
+	background:url(exam/images/back.jpg) no-repeat;
+}
+.txttitle{
+	position:absolute; 
+	top:190px; 
+	width:100%;
+	text-align:center;
+}
+.endtext { 
+	display:block;
+	position:relative;
+	color:#255dad; 
+	font-size:32px; 
+	
+	font-weight:bolder;
+}
+.bg{
+	width:252px;
+	height:350px;
+	display:block;
+	margin-left:200px;
+	margin:0 auto;
+	background: url(exam/images/02_zg_0629.png) no-repeat;
+}
+.buthome{
+	position:absolute; 
+	top:590px; 
+	width:100%;
+	text-align:center;
+}
+.inphome {
+	width: 90px;
+	background: url(exam/images/submit.gif) repeat-x;
+	border: 1px solid #cc6600;
+	color:#000000;
+	font-size:13px;
+	cursor: pointer;
+	border-radius:0px;
+	padding:6px;
+}
+
+</style> 
+<script>
+	function openDL(kmtype) {
+		console.log("kmtype:"+kmtype);
+		OBT.storage.setSession("kmtype",kmtype);
+		OBT.storage.setLocal("kmtype",kmtype);
+		//window.location.replace("exam");
+		window.open("exam");
+	}
+	function openvideo() {
+		window.open("video.html");
+	}
+</script>
+</head>
+<body>
+<!-- <div id="zdhcs" style="margin-left:180px;margin-top:60px;font-size:34px;color:red;font-weight:bold;position:relative;z-index:102;">自动化测试中...</div> -->
+	<div class="endBack2">
+		<div class="txttitle">
+			<span class="endtext"><img src="exam/images/01.png"/></span>
+			<span class="endtext">&nbsp;</span>
+			<span class="endtext bg">
+				<!--<a style="display:block;width:240px;height:90px; float:left;margin-top:49px;margin-left:46px;cursor:pointer;" onclick="javascript:openDL(1)">&nbsp;</a>
+				<a style="display:block;width:242px;height:90px;float:left;margin-top:49px;margin-left:9px;cursor:pointer;" onclick="javascript:openDL(2)">&nbsp;</a>-->
+				<a style="display:block;width:242px;height:90px;float:left;margin-top:0px;margin-left:0px;cursor:pointer;" onclick="javascript:openDL(3)">&nbsp;</a>
+			</span>
+			<span class="endtext" style="margin-top:-140px;font-size:30px;">
+				请使用IE浏览器浏览
+			</span>
+			<!--<span class="endtext" style="margin-top:40px;font-size:30px;">
+				<a href="javascript:void(0)" onclick="openvideo()" >2017年国家统一法律职业资格考试答题演示</a>
+			</span>-->
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>全国执业兽医资格考试计算机考试模拟练习软件</title>
+		<meta name="content-type" content="text/html; charset=utf-8">
+		  <meta http-equiv="pragma" content="no-cache">
+		  <meta http-equiv="cache-control" content="no-cache">
+		  <meta http-equiv="expires" content="0">
+		<script language="javascript" src="common/js/jquery.min.js"></script>
+  		<!-- <script language="javascript" src="common/js/countdown.js"></script>
+  		<script language="javascript" src="common/js/obttimer.js"></script> -->
+  		<script language="javascript" src="common/js/countdown2.js"></script>
+  		<script type="text/javascript">
+  		
+  			/* $(function(){
+				$("#clock").timeTo();
+  			}); */
+  			
+  			
+			function getMM() {
+				var kcdm = $("#kcdm").val();
+				var kspcbh = $("#kspcbh").val();
+				if(kcdm.length==0||kspcbh.length==0) {
+					return ;
+				}
+				var data = "{\"kcdm\":\""+ kcdm +"\",\"kspcbh\":\""+ kspcbh +"\"}";
+				$.ajax({
+					url:'exam/ccKs/getMM.do',
+					type:'post',
+					dataType:'json',
+					contentType:'application/json',
+					data:data,
+					success:function(data){
+						if(data.status==1) {
+							$("#mm").html(data.message);
+						} else {
+							$("#mm").html("没有获取到");
+						}
+					},
+					error:function(){
+						$("#mm").html("请求失败");
+					}
+				});
+			}
+			
+  		</script>
+		<style>
+			body { margin:0 auto; padding:0 auto;}
+		    ul,li { list-style-type:none;}
+		    .pic-jk { width:865px; height:217px; margin:40px auto 0 auto; }
+		    .pic-xs { width:865px; height:217px; margin:10px auto 0 auto; }
+		</style>
+	</head>
+  
+	<body>
+
+	<div class="pic-jk"><img src="common/images/jk.jpg" usemap="#Map" border="0" />
+	</div>
+    <map name="Map" id="Map">
+        <area shape="rect" coords="99,61,203,195" href="singlemanage" title="管理端登录" />
+        <area shape="rect" coords="350,59,500,197" href="../bs/google.exe" title="谷歌浏览器下载" />
+        <area shape="rect" coords="624,55,760,195" href="../bs/HytCameraSetup.exe" title="考生签到单机版下载" />
+    </map>
+
+	<div class="pic-xs"><img src="common/images/xs.jpg" usemap="#Map2" border="0" />
+	</div>
+    <map name="Map2" id="Map2">
+        <area shape="rect" coords="90,57,218,200" href="" title="SAC锁屏浏览器下载" />
+        <area shape="rect" coords="350,59,500,197" href="exam/ksjwsz" title="电子座位号设置" />
+    </map>
+		
+		<script type="text/javascript">
+			function storage_local(){
+				if(window.localStorage){
+					alert("浏览器支持localStorage");
+				} else {
+					alert("浏览器不支持localStorage");
+				}
+			}
+			
+			function storage_session(){
+				if(window.sessionStorage){
+					alert("浏览器支持sessionStorage");
+				} else {
+					alert("浏览器不支持sessionStorage");
+				}
+			}
+			
+			$(function(){
+				var time = new Date().getTime();
+	  			$("#Map2 area[title='SAC锁屏浏览器下载']").attr("href","../bs/hytsac.exe?date="+time+".exe");
+			});
+		</script>
+	</body>
+</html>

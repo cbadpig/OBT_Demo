@@ -1,0 +1,68 @@
+body {
+	margin:0 auto;
+	padding:0;
+}
+ul, li {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.Wback {
+	position:relative;
+	top:0;
+	left:0;
+	margin:0 auto;
+	width:526px;
+	height:291px;
+	background:url(../images/ts_d.gif) no-repeat;
+}
+.tstitle {
+	position:absolute;
+	top:23px;
+	left:30px;
+	background:url(../images/ts_1.gif) no-repeat;
+	width:115px;
+	height:40px;
+}
+.tspic {
+	position:absolute;
+	top:95px;
+	left:38px;
+	background:url(../images/ts_2.gif) no-repeat;
+	width:130px;
+	height:135px;
+}
+.tstext {
+	position:absolute;
+	top:110px;
+	left:210px;
+	width:288px;
+	height:80px;
+	color:#ff0000;
+	font-weight:bold;
+	line-height:30px;
+	font-size:18px;
+}
+.tsbutton {
+	position:absolute;
+	top:190px;
+	left:210px;
+	width:288px;
+	height:30px;
+	text-align:center;
+}
+.tsbutton input {
+	margin-right:11px;
+}
+.tsbutton1, .tsbutton2 {
+	width:84px;
+	height:31px;
+	border:0;
+	cursor:pointer;
+}
+.tsbutton1, .tsbutton2 {
+	background:url(../images/ts_4.gif) no-repeat;
+}
+.tsbutton2 {
+	background:url(../images/ts_3.gif) no-repeat;
+}

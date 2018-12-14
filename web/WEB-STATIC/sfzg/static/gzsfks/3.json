@@ -1,0 +1,220 @@
+{
+  "subjects": [
+    {
+      "code": "1",
+      "name": "主观题",
+      "paperCode": "sj3",
+      "duration": 7200,
+      "submitLimit": 0,
+      "path": "",
+      "kcdm": "1",
+      "kspcbh": "4",
+      "sjbwj": null,
+      "sjdm": "sj3"
+    }
+  ],
+  "papers": [
+    {
+      "code": "sj3",
+      "name": "主观题",
+      "topItemCount": 0,
+      "chapterCount": 0,
+      "order": 0,
+      "groups": [
+        {
+          "no": 1,
+          "name": "一、论述题",
+          "itemCodes": [
+            "1"
+          ]
+        },
+        {
+          "no": 2,
+          "name": "二、法律文书题",
+          "itemCodes": [
+            "2"
+          ]
+        },
+        {
+          "no": 3,
+          "name": "三、案例分析题",
+          "itemCodes": [
+            "3"
+          ]
+        }
+      ],
+      "items": [
+        {
+          "code": "1",
+          "name": "1",
+          "no": "1",
+          "level": 0,
+          "format": "1,2,4,8",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "1",
+          "pcode": "",
+          "id": "1",
+          "flag": 2,
+          "zdsc": 0,
+          "zdsc": 0,
+          "sjxth": "1"
+        },
+        {
+          "code": "2",
+          "name": "2",
+          "no": "2",
+          "level": 0,
+          "format": "1,2,4,8",
+          "answer": "",
+          "type": "COMPOSITE",
+          "gno": "2",
+          "pcode": "",
+          "id": "2",
+          "flag": 2,
+          "zdsc": 0,
+          "zdsc": 0,
+          "sjxth": "2"
+        },
+        {
+          "code": "3",
+          "name": "3",
+          "no": "3",
+          "level": 0,
+          "format": "1,2,4,8",
+          "answer": "",
+          "type": "COMPOSITE",
+          "gno": "3",
+          "pcode": "",
+          "id": "3",
+          "flag": 2,
+          "zdsc": 0,
+          "zdsc": 0,
+          "sjxth": "3"
+        },
+        {
+          "code": "5",
+          "name": "5",
+          "no": "5",
+          "level": 0,
+          "format": "1,2,4,8",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "2",
+          "pcode": "2",
+          "id": 5
+        },
+        {
+          "code": "6",
+          "name": "6",
+          "no": "6",
+          "level": 0,
+          "format": "1,2,4,8",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "2",
+          "pcode": "2",
+          "id": 6
+        },
+        {
+          "code": "7",
+          "name": "7",
+          "no": "7",
+          "level": 0,
+          "format": "1,2,4,8",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "2",
+          "pcode": "2",
+          "id": 7
+        },
+        {
+          "code": "8",
+          "name": "8",
+          "no": 8,
+          "level": 1,
+          "format": "1,2,8,4",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "2",
+          "pcode": "2",
+          "id": 8
+        },
+        {
+          "code": "9",
+          "name": "9",
+          "no": 9,
+          "level": 1,
+          "format": "1,2,8,4",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "2",
+          "pcode": "2",
+          "id": 9
+        },
+        {
+          "code": "10",
+          "name": "10",
+          "no": 10,
+          "level": 1,
+          "format": "1,2,8,4",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "3",
+          "pcode": "2",
+          "id": 10
+        },
+        {
+          "code": "11",
+          "name": "11",
+          "no": 11,
+          "level": 1,
+          "format": "1,2,8,4",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "3",
+          "pcode": "3",
+          "id": 11
+        },
+        {
+          "code": "12",
+          "name": "12",
+          "no": 12,
+          "level": 1,
+          "format": "1,2,8,4",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "3",
+          "pcode": "3",
+          "id": 12
+        },
+        {
+          "code": "13",
+          "name": "13",
+          "no": 13,
+          "level": 1,
+          "format": "1,2,8,4",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "3",
+          "pcode": "3",
+          "id": 13
+        },
+        {
+          "code": "14",
+          "name": "14",
+          "no": 14,
+          "level": 1,
+          "format": "1,2,8,4",
+          "answer": "",
+          "type": "SAQ",
+          "gno": "3",
+          "pcode": "3",
+          "id": 14
+        }
+      ],
+      "itemCount": 3,
+      "groupCount": 3
+    }
+  ]
+}

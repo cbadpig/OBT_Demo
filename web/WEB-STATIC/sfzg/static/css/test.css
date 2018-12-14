@@ -1,0 +1,76 @@
+body {margin:0 auto;background-color: #ddebf6}
+ul,li { list-style-type:none;}
+img { border:0;}
+.clear { clear:both;}
+.markst{ background:url(../images/n_42.gif) repeat-x; width:100%; height:29px;}
+.markst li{ float:left; display:block;font-family:"宋体"}
+.markst li a{ display:block; width:58px; height:21px; background:url(../img/pic_39.jpg) no-repeat; float:left; margin:4px 2px auto 0px; color:#000000; font-size:12px; line-height:21px; text-align:center; text-decoration:none;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53";}
+.markst li a:hover{ text-decoration:none}
+.markst_1{float:left; height:29px; margin-right:6px; width:109px; font-size:14px; font-weight:bolder; line-height:29px; background:url(../images/markst.png) no-repeat; text-align:center;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53";}
+.test_bt{ font-family:"黑体";font-weight: normal; color:#333333; font-size:14px; line-height:1.5; padding:5px; margin:0px ;margin-left:48px;text-align:left; height:68px;}
+.test_content {
+	line-height: 1.5;
+	border-top: 1px solid #9fb7f7;
+	padding: 15px 15px 40px 15px;
+}
+
+.bjbutton { background:url(../images/bjbutton.gif) no-repeat; width:58px; height:21px;}
+
+
+.test_content1 {
+	border-top: 1px solid #9fb7f7;
+	border-bottom: 1px solid #9fb7f7;
+	height:22px;
+	width:100%;font-family:"黑体";font-size:14px;
+}
+.titleM { width:48%; line-height: 20px;padding-left:20px; float:left;}
+
+.q_main{
+	line-height: 20px;
+	border-bottom: 1px solid #9fb7f7;
+	font-family:"黑体";
+	font-size:14px;
+	}
+.q_text { width:99%; height:150px;}
+
+.q_title{
+	line-height: 20px;
+	border-bottom: 1px solid #9fb7f7;
+	font-family:"黑体";
+	font-size:14px;
+	height:67px;
+	clear:both;
+	}
+.QUtitle {
+	margin:0 auto;
+	width:50%;
+	float:left;
+	height:auto;
+	
+	}
+.QUtitle ul {margin:0 auto 0 0; padding:0; }
+.QUtitle li { display:inline-block; margin:0; text-align:center; line-height:27px; padding:0; float:left; }
+.Onback { background:url(../images/cell-blue.png) no-repeat center; width:55px; height:27px; cursor:pointer;}
+.Offback { background:url(../images/cell-grey.png) no-repeat center; width:55px; height:27px;cursor:pointer;}
+.Ontext { margin-top:8px; font-size:14px;}
+	
+.Tbotton {
+	width:49%;
+	float:left;
+	margin-top:5px;}
+.Tbotton1 { float:right; margin-right:20px; margin-top:2px;}
+.Tbotton li,.Tbotton1 li { display:inline;margin-left:10px;}
+.icon-copy,.icon-cut,.icon-paste,.icon-formula,.icon-ch,.icon-cal,.icon-zoom-in,.icon-tg,.icon-btg,.icon-xtg {width:16px; height:16px; vertical-align:middle;}
+.icon-copy{ background:url(../images/1.gif) no-repeat center; }
+.icon-cut { background:url(../images/2.gif) no-repeat center;}
+.icon-paste { background:url(../images/3.gif) no-repeat center;}
+.icon-formula { background:url(../images/4.gif) no-repeat center;}
+.icon-ch { background:url(../images/5.gif) no-repeat center;}
+.icon-cal { background:url(../images/6.gif) no-repeat center;}
+.icon-zoom-in { background:url(../images/7.gif) no-repeat center;}
+.icon-tg { background:url(../images/sqtb.JPG) no-repeat center;}
+.icon-btg { background:url(../images/zht_06.gif) no-repeat center;}
+.icon-xtg { background:url(../images/zht_08.gif) no-repeat center;}
+
+
+

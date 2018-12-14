@@ -1,0 +1,23 @@
+body { background:url(../images/back.gif) repeat-x;font-family:Verdana, Geneva, sans-serif; margin:0 auto; padding:0; background-color:#2d6dae; }
+ul,li { padding:0; margin:0; list-style-type:none;}
+
+.msgbg { position:relative;  margin-left: auto; text-align: center;
+  margin-right: auto;}
+.seatno-center { position:relative; width: 100%; text-align: center; line-height: 150px;
+ font-size:248px; color:red; font-family:"微软雅黑";cursor: pointer;}
+
+.buttonk { position:absolute; left:75px; bottom:5px; width:auto;height:35px;}
+.buttonk input { margin-right:25px; cursor:pointer; border:0;}
+.buttonDl { background:url(../images/login_0.jpg) no-repeat; width:75px; height:28px; border:0;}
+.buttonDlOnlie { background:url(../images/login_1.jpg) no-repeat; width:75px; height:28px;border:0;}
+.buttonDlDown { background:url(../images/login_2.jpg) no-repeat; width:75px; height:28px;border:0;}
+
+.buttonCz { background:url(../images/reset_0.jpg) no-repeat; width:75px; height:28px; border:0;}
+.buttonCzOnlie { background:url(../images/reset_1.jpg) no-repeat; width:75px; height:28px;border:0;}
+.buttonCzDown { background:url(../images/reset_2.jpg) no-repeat; width:75px; height:28px;border:0;}
+
+
+
+
+
+
